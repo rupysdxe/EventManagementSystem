@@ -2,7 +2,147 @@
 <html lang="en">
 
 <head>
+   <style>.job-box-filter label {
+    width: 100%;
+}
+.job-box-filter select.input-sm {
+    display: inline-block;
+    max-width: 120px;
+    margin: 0 5px;
+    border: 1px solid #e8eef1;
+    border-radius: 2px;
+    height: 34px;
+    font-size: 15px;
+}
+.job-box-filter label input.form-control {
+    max-width: 200px;
+    display: inline-block;
+    border: 1px solid #e8eef1;
+    border-radius: 2px;
+    height: 34px;
+    margin-left:5px;
+    font-size: 15px;
+}
+.text-right{
+    text-align:right;
+}
+.job-box-filter {
+    padding: 12px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8eef1;
+    margin-bottom: 20px;
+}
+.job-box {
+    background: #ffffff;
+    display: inline-block;
+    width: 100%;
+    padding: 0 0px 40px 0px;
+    border: 1px solid #e8eef1;
+}
+.job-box-filter a.filtsec {
+    margin-top: 8px;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 4px 10px;
+    font-family: 'Quicksand', sans-serif;
+    transition: all ease 0.4s;
+    background: #edf0f3;
+    border-radius: 50px;
+    font-size: 13px;
+    color: #81a0b1;
+    border: 1px solid #e2e8ef;
+}
+.job-box-filter a.filtsec.active {
+    color: #ffffff;
+    background: #16262c;
+    border-color:#16262c;
+}
+.job-box-filter a.filtsec i {
+    color: #03A9F4;
+    margin-right: 5px;
+}
+.job-box-filter a.filtsec:hover, .job-box-filter a.filtsec:focus {
+    color: #ffffff;
+    background: #07b107;
+    border-color: #07b107;
+}
+.job-box-filter a.filtsec:hover i, .job-box-filter a.filtsec:focus i{
+    color:#ffffff;
+}
+.job-box-filter h4 i {
+    margin-right: 10px;
+}
 
+/*=====================================
+Inbox Message Style
+=======================================*/
+.inbox-message ul {
+    padding: 0;
+    margin: 0;
+}
+.inbox-message ul li {
+    list-style: none;
+    position: relative;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e8eef1;
+}
+.inbox-message ul li:hover, .inbox-message ul li:focus {
+    background: #eff6f9;
+}
+.inbox-message .message-avatar {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.message-avatar img {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+}
+.inbox-message .message-body {
+    margin-left: 85px;
+    font-size: 15px;
+    color:#62748F;
+}
+.message-body-heading h5 {
+    font-weight: 600;
+    display:inline-block;
+    color:#62748F;
+    margin: 0 0 7px 0;
+    padding: 0;
+}
+.message-body h5 span {
+    border-radius: 50px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #fff;
+    font-style: normal;
+    padding: 4px 10px;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+.message-body h5 span.unread{
+    background:#07b107;
+}
+.message-body h5 span.important{
+    background:#dd2027;
+}
+.message-body h5 span.pending{
+    background:#2196f3;
+}
+.message-body-heading span {
+    float: right;
+    color:#62748F;
+    font-size: 14px;
+}
+.messages-inbox .message-body p {
+    margin: 0;
+    padding: 0;
+    line-height: 27px;
+    font-size: 15px;
+}</style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,8 +154,8 @@
     <!-- Custom fonts for this template-->
     <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
@@ -24,141 +164,161 @@
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3"> Events <sup>College</sup></div>
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"> Events <sup>College</sup></div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+
+
+        <!-- Nav Item - Pages Collapse Menu -->
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Admin Login</span>
             </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-
-
-            <!-- Nav Item - Pages Collapse Menu -->
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Admin Login</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="/pages/login">Login</a>
-                    </div>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Login Screens:</h6>
+                    <a class="collapse-item" href="/pages/login">Login</a>
                 </div>
-            </li>
+            </div>
+        </li>
 
-            <!-- Nav Item - Charts -->
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+        <!-- Nav Item - Charts -->
 
 
-        </ul>
-        <!-- End of Sidebar -->
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
+    </ul>
+    <!-- End of Sidebar -->
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+        <!-- Main Content -->
+        <div id="content">
 
-                    <!-- Topbar Search -->
-                    <form
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- Topbar Search -->
+                <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                               aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
                         </div>
-                    </form>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-
-                        <!-- Nav Item - Alerts -->
-
-                        <!-- Nav Item - Messages -->
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800"> Notices </h1>
-
                     </div>
+                </form>
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+
+                    <!-- Nav Item - Alerts -->
+
+                    <!-- Nav Item - Messages -->
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800"> Notices </h1>
+
+                </div>
+                <div class="inbox-message">
+                    <ul>
+                        <li th:each="event:${eventList}">
+                            <a href="#">
+                                <div class="message-avatar">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="message-body">
+                                    <div class="message-body-heading">
+                                        <h5 th:text="${event.username}"> <span class="unread">Unread</span></h5>
+                                        <span>post time</span>
+                                    </div>
+                                    <p th:text="${event.notice}">Notice</p>
+                                </div>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
                 <div>
 
-                </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+<!-- Core plugin JavaScript-->
+<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script th:src="@{/js/sb-admin-2.min.js}"></script>
+<!-- Custom scripts for all pages-->
+<script th:src="@{/js/sb-admin-2.min.js}"></script>
 
-    <!-- Page level plugins -->
-    <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+<!-- Page level plugins -->
+<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
 
-    <!-- Page level custom scripts -->
-    <script th:src="@{/js/demo/chart-area-demo.js}"></script>
-    <script th:src="@{/js/demo/chart-pie-demo.js}"></script>
+<!-- Page level custom scripts -->
+<script th:src="@{/js/demo/chart-area-demo.js}"></script>
+<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
 
 </body>
 

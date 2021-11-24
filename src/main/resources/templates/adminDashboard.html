@@ -1,7 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
+    <style>.job-box-filter label {
+        width: 100%;
+    }
+    .job-box-filter select.input-sm {
+        display: inline-block;
+        max-width: 120px;
+        margin: 0 5px;
+        border: 1px solid #e8eef1;
+        border-radius: 2px;
+        height: 34px;
+        font-size: 15px;
+    }
+    .job-box-filter label input.form-control {
+        max-width: 200px;
+        display: inline-block;
+        border: 1px solid #e8eef1;
+        border-radius: 2px;
+        height: 34px;
+        margin-left:5px;
+        font-size: 15px;
+    }
+    .text-right{
+        text-align:right;
+    }
+    .job-box-filter {
+        padding: 12px 15px;
+        background: #ffffff;
+        border-bottom: 1px solid #e8eef1;
+        margin-bottom: 20px;
+    }
+    .job-box {
+        background: #ffffff;
+        display: inline-block;
+        width: 100%;
+        padding: 0 0px 40px 0px;
+        border: 1px solid #e8eef1;
+    }
+    .job-box-filter a.filtsec {
+        margin-top: 8px;
+        display: inline-block;
+        margin-right: 15px;
+        padding: 4px 10px;
+        font-family: 'Quicksand', sans-serif;
+        transition: all ease 0.4s;
+        background: #edf0f3;
+        border-radius: 50px;
+        font-size: 13px;
+        color: #81a0b1;
+        border: 1px solid #e2e8ef;
+    }
+    .job-box-filter a.filtsec.active {
+        color: #ffffff;
+        background: #16262c;
+        border-color:#16262c;
+    }
+    .job-box-filter a.filtsec i {
+        color: #03A9F4;
+        margin-right: 5px;
+    }
+    .job-box-filter a.filtsec:hover, .job-box-filter a.filtsec:focus {
+        color: #ffffff;
+        background: #07b107;
+        border-color: #07b107;
+    }
+    .job-box-filter a.filtsec:hover i, .job-box-filter a.filtsec:focus i{
+        color:#ffffff;
+    }
+    .job-box-filter h4 i {
+        margin-right: 10px;
+    }
+
+    /*=====================================
+    Inbox Message Style
+    =======================================*/
+    .inbox-message ul {
+        padding: 0;
+        margin: 0;
+    }
+    .inbox-message ul li {
+        list-style: none;
+        position: relative;
+        padding: 15px 20px;
+        border-bottom: 1px solid #e8eef1;
+    }
+    .inbox-message ul li:hover, .inbox-message ul li:focus {
+        background: #eff6f9;
+    }
+    .inbox-message .message-avatar {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .message-avatar img {
+        display: inline-block;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+    }
+    .inbox-message .message-body {
+        margin-left: 85px;
+        font-size: 15px;
+        color:#62748F;
+    }
+    .message-body-heading h5 {
+        font-weight: 600;
+        display:inline-block;
+        color:#62748F;
+        margin: 0 0 7px 0;
+        padding: 0;
+    }
+    .message-body h5 span {
+        border-radius: 50px;
+        line-height: 14px;
+        font-size: 12px;
+        color: #fff;
+        font-style: normal;
+        padding: 4px 10px;
+        margin-left: 5px;
+        margin-top: -5px;
+    }
+    .message-body h5 span.unread{
+        background:#07b107;
+    }
+    .message-body h5 span.important{
+        background:#dd2027;
+    }
+    .message-body h5 span.pending{
+        background:#2196f3;
+    }
+    .message-body-heading span {
+        float: right;
+        color:#62748F;
+        font-size: 14px;
+    }
+    .messages-inbox .message-body p {
+        margin: 0;
+        padding: 0;
+        line-height: 27px;
+        font-size: 15px;
+    }</style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -112,7 +253,8 @@
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <a href="/"><li class="text-danger">Logout</li></a>
+                    <a  style="padding-right: 20px" href="/"><li class="text-danger">Create Event</li></a>
+                    <a  href="/"><li class="text-danger">Logout  </li></a>
 
                 </ul>
 
@@ -126,28 +268,63 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800"> Notices </h1>
                 </div>
-                
+                <div class="inbox-message">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="message-avatar">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="message-body">
+                                    <div class="message-body-heading">
+                                        <h5>Username<span class="unread">Unread</span></h5>
+                                        <span>post time</span>
+                                    </div>
+                                    <p>Notice</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="message-avatar">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="message-body">
+                                    <div class="message-body-heading">
+                                        <h5>Username<span class="unread">Unread</span></h5>
+                                        <span>post time</span>
+                                    </div>
+                                    <p>Notice</p>
+                                </div>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+
 
             </div>
-                <!-- Bootstrap core JavaScript-->
-                <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-                <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+            <!-- Bootstrap core JavaScript-->
+            <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+            <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-                <!-- Core plugin JavaScript-->
-                <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+            <!-- Core plugin JavaScript-->
+            <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
-                <!-- Custom scripts for all pages-->
-                <script th:src="@{/js/sb-admin-2.min.js}"></script>
+            <!-- Custom scripts for all pages-->
+            <script th:src="@{/js/sb-admin-2.min.js}"></script>
 
-                <!-- Page level plugins -->
-                <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+            <!-- Page level plugins -->
+            <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
 
-                <!-- Page level custom scripts -->
-                <script th:src="@{/js/demo/chart-area-demo.js}"></script>
-                <script th:src="@{/js/demo/chart-pie-demo.js}"></script>
-            </div>
+            <!-- Page level custom scripts -->
+            <script th:src="@{/js/demo/chart-area-demo.js}"></script>
+            <script th:src="@{/js/demo/chart-pie-demo.js}"></script>
         </div>
     </div>
+</div>
 </body>
 
 </html>
