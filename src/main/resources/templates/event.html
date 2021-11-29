@@ -38,36 +38,19 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Admin Register</h1>
-                                    <h6 class="text-danger"> <p th:text="${adminerror}"></p></h6>
+                                    <h1 class="h4 text-gray-900 mb-4">Create Event</h1>
                                 </div>
-                                <form class="user" action="/register" method="post">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user"
-                                               id="firstName" aria-describedby="emailHelp"
-                                               name="firstName" placeholder="Enter firstName..." required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user"
-                                               id="lastName" aria-describedby="emailHelp"
-                                               name="lastName" placeholder="Enter lastname..." required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user"
-                                               id="position" aria-describedby="emailHelp"
-                                               name="position" placeholder="Enter Position here..." required>
-                                    </div>
+                                <form class="user" action="/createEvent" method="post">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user"
                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                               name="username" placeholder="Enter Username..." required>
+                                               name="topic" placeholder="Enter Topic...." required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" name="password" placeholder="Password" required>
+                                        <input type="text" class="form-control form-control-user"
+                                               id="exampleInputPassword" name="notice" placeholder="Notice" required>
                                     </div>
-
-                                    <input class="btn btn-primary btn-user btn-block" type="submit" value="Register">
+                                    <input class="btn btn-primary btn-user btn-block" type="submit" value="Create Event">
                                     <hr>
                                 </form>
                                 <hr>

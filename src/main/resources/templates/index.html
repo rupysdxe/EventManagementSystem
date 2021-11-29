@@ -207,7 +207,7 @@ Inbox Message Style
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="/pages/login">Login</a>
+                    <a class="collapse-item" href="/login">Login</a>
                 </div>
             </div>
         </li>
@@ -283,8 +283,12 @@ Inbox Message Style
                                 </div>
                                 <div class="message-body">
                                     <div class="message-body-heading">
-                                        <h5 th:text="${event.username}"> <span class="unread">Unread</span></h5>
-                                        <span>post time</span>
+                                        <h5 th:text="${event.admin.firstName}"></h5>
+                                        <h5 th:text="${event.admin.lastName}"></h5>
+                                        <h5>(</h5>
+                                        <h5 th:text="${event.admin.position}"></h5>
+                                        <h5>)</h5>
+                                        <span th:text="${event.hourDifference}"></span>
                                     </div>
                                     <p th:text="${event.notice}">Notice</p>
                                 </div>

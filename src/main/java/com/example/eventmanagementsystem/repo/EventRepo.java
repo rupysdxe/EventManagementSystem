@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EventRepo extends JpaRepository<Event,Integer> {
-
+      public Event findByNotice(String notice);
+      public int findAllByAdminId(int id);
 }

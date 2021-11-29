@@ -270,9 +270,11 @@
                 </div>
 
 
+
+
                 <div class="inbox-message">
                     <ul>
-                        <li th:each="event:${eventList}">
+                        <li th:each="admin:${adminList}">
                             <a href="#">
                                 <div class="message-avatar">
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
@@ -281,25 +283,25 @@
                                     <div class="message-body-heading">
 
 
-                                        <h5 th:text="${event.admin.firstName}"></h5>
-                                        <h5 th:text="${event.admin.lastName}"></h5>
+                                        <h5 th:text="${admin.firstName}"></h5>
+                                        <h5 th:text="${admin.lastName}"></h5>
                                         <h5>(</h5>
-                                        <h5 th:text="${event.admin.position}"></h5>
+                                        <h5 th:text="${admin.position}"></h5>
                                         <h5>)</h5>
 
-                                        <a th:href="@{/edit(eid=${event.eid})}"> <button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-                                        <a th:href="@{/delete(eid=${event.eid})}"> <button type="button" class="btn btn-danger btn-sm">Delete</button></a>
 
 
-                                        <span th:text="${event.hourDifference}"></span>
                                     </div>
-                                    <p th:text="${event.notice}">Notice</p>
+
                                 </div>
                             </a>
                         </li>
 
                     </ul>
                 </div>
+
+
+
 
 
 
