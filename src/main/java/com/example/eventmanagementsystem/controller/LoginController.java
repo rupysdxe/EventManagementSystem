@@ -35,6 +35,6 @@ public class LoginController {
             return "redirect:adminPanel";
         }
         model.addAttribute("error","Login Failed ! Try Again ");
-        return "redirect:login";
+        return "login";
     }
 }
