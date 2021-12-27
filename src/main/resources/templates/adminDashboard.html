@@ -2,147 +2,64 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <style>.job-box-filter label {
-        width: 100%;
-    }
-    .job-box-filter select.input-sm {
-        display: inline-block;
-        max-width: 120px;
-        margin: 0 5px;
-        border: 1px solid #e8eef1;
-        border-radius: 2px;
-        height: 34px;
-        font-size: 15px;
-    }
-    .job-box-filter label input.form-control {
-        max-width: 200px;
-        display: inline-block;
-        border: 1px solid #e8eef1;
-        border-radius: 2px;
-        height: 34px;
-        margin-left:5px;
-        font-size: 15px;
-    }
-    .text-right{
-        text-align:right;
-    }
-    .job-box-filter {
-        padding: 12px 15px;
-        background: #ffffff;
-        border-bottom: 1px solid #e8eef1;
-        margin-bottom: 20px;
-    }
-    .job-box {
-        background: #ffffff;
-        display: inline-block;
-        width: 100%;
-        padding: 0 0px 40px 0px;
-        border: 1px solid #e8eef1;
-    }
-    .job-box-filter a.filtsec {
-        margin-top: 8px;
-        display: inline-block;
-        margin-right: 15px;
-        padding: 4px 10px;
-        font-family: 'Quicksand', sans-serif;
-        transition: all ease 0.4s;
-        background: #edf0f3;
-        border-radius: 50px;
-        font-size: 13px;
-        color: #81a0b1;
-        border: 1px solid #e2e8ef;
-    }
-    .job-box-filter a.filtsec.active {
-        color: #ffffff;
-        background: #16262c;
-        border-color:#16262c;
-    }
-    .job-box-filter a.filtsec i {
-        color: #03A9F4;
-        margin-right: 5px;
-    }
-    .job-box-filter a.filtsec:hover, .job-box-filter a.filtsec:focus {
-        color: #ffffff;
-        background: #07b107;
-        border-color: #07b107;
-    }
-    .job-box-filter a.filtsec:hover i, .job-box-filter a.filtsec:focus i{
-        color:#ffffff;
-    }
-    .job-box-filter h4 i {
-        margin-right: 10px;
-    }
 
-    /*=====================================
-    Inbox Message Style
-    =======================================*/
-    .inbox-message ul {
-        padding: 0;
-        margin: 0;
-    }
-    .inbox-message ul li {
-        list-style: none;
-        position: relative;
-        padding: 15px 20px;
-        border-bottom: 1px solid #e8eef1;
-    }
-    .inbox-message ul li:hover, .inbox-message ul li:focus {
-        background: #eff6f9;
-    }
-    .inbox-message .message-avatar {
-        position: absolute;
-        left: 30px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    .message-avatar img {
-        display: inline-block;
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-    }
-    .inbox-message .message-body {
-        margin-left: 85px;
-        font-size: 15px;
-        color:#62748F;
-    }
-    .message-body-heading h5 {
-        font-weight: 600;
-        display:inline-block;
-        color:#62748F;
-        margin: 0 0 7px 0;
-        padding: 0;
-    }
-    .message-body h5 span {
-        border-radius: 50px;
-        line-height: 14px;
-        font-size: 12px;
-        color: #fff;
-        font-style: normal;
-        padding: 4px 10px;
-        margin-left: 5px;
-        margin-top: -5px;
-    }
-    .message-body h5 span.unread{
-        background:#07b107;
-    }
-    .message-body h5 span.important{
-        background:#dd2027;
-    }
-    .message-body h5 span.pending{
-        background:#2196f3;
-    }
-    .message-body-heading span {
-        float: right;
-        color:#62748F;
-        font-size: 14px;
-    }
-    .messages-inbox .message-body p {
-        margin: 0;
-        padding: 0;
-        line-height: 27px;
-        font-size: 15px;
-    }</style>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            float: right;
+            padding-right: 20px;
+        }
+        @media (min-width: 0) {
+            .g-mr-15 {
+                margin-right: 1.07143rem !important;
+            }
+        }
+        @media (min-width: 0){
+            .g-mt-3 {
+                margin-top: 0.21429rem !important;
+            }
+        }
+
+        .g-height-50 {
+            height: 50px;
+        }
+
+        .g-width-50 {
+            width: 50px !important;
+        }
+
+        @media (min-width: 0){
+            .g-pa-30 {
+                padding: 2.14286rem !important;
+            }
+        }
+
+        .g-bg-secondary {
+            background-color: #fafafa !important;
+        }
+
+        .u-shadow-v18 {
+            box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.15);
+        }
+
+        .g-color-gray-dark-v4 {
+            color: #777 !important;
+        }
+
+        .g-font-size-12 {
+            font-size: 0.85714rem !important;
+        }
+
+        .media-comment {
+            margin-top:20px
+        }
+
+
+</style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -152,11 +69,10 @@
 
     <title>SB Admin 2 - Dashboard</title>
 
-    <!-- Custom fonts for this template-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
-    <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+
 
     <!-- Custom styles for this template-->
     <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
@@ -209,6 +125,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="/register">Register</a>
                     <a class="collapse-item" href="/adminList">Admin List</a>
+
                 </div>
 
             </div>
@@ -222,35 +139,22 @@
 
 
     </ul>
-    <!-- End of Sidebar -->
 
-    <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-        <!-- Main Content -->
+
         <div id="content">
 
-            <!-- Topbar -->
+
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                <!-- Sidebar Toggle (Topbar) -->
+
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <!-- Topbar Search -->
-                <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+
+
 
 
                 <ul class="navbar-nav ml-auto">
@@ -270,36 +174,45 @@
                 </div>
 
 
-                <div class="inbox-message">
-                    <ul>
-                        <li th:each="event:${eventList}">
-                            <a href="#">
-                                <div class="message-avatar">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+
+
+
+                <div class="row"   th:each="event: ${eventList}" >
+                    <div class="col-md-10">
+                        <div class="media g-mb-30 media-comment">
+                            <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+                            <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                                <div class="g-mb-15">
+                                    <h3 class="h5 g-color-gray-dark-v1 mb-0" th:text="${event.admin.firstName}  +' '+ ${event.admin.lastName}" ></h3>
                                 </div>
-                                <div class="message-body">
-                                    <div class="message-body-heading">
+                                <br>
+                                <h6 class="text-center text-danger"  th:text="${event.topic}"></h6>
+                                <h6 th:text="${event.notice}">
+                                </h6>
+                                <div class="row">
+                                    <ul>
 
+                                        <li th:text="${event.hourDifference}"></li>
 
-                                        <h5 th:text="${event.admin.firstName}"></h5>
-                                        <h5 th:text="${event.admin.lastName}"></h5>
-                                        <h5>(</h5>
-                                        <h5 th:text="${event.admin.position}"></h5>
-                                        <h5>)</h5>
+                                        <a th:href="@{/delete(eid=${event.eid})}"><input  class="btn btn btn-danger" value="Delete" type="submit"></a>
+                                        <a th:href="@{/edit(eid=${event.eid})}"><input  class="btn btn btn-primary" value="Edit" type="submit"></a>
+                                    </ul>
+                                    <h6 ></h6>
 
-                                        <a th:href="@{/edit(eid=${event.eid})}"> <button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-                                        <a th:href="@{/delete(eid=${event.eid})}"> <button type="button" class="btn btn-danger btn-sm">Delete</button></a>
-
-
-                                        <span th:text="${event.hourDifference}"></span>
-                                    </div>
-                                    <p th:text="${event.notice}">Notice</p>
                                 </div>
-                            </a>
-                        </li>
 
-                    </ul>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+
+
+
+
+
+
+
 
 
 

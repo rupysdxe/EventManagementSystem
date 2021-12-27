@@ -16,7 +16,7 @@ public class IndexController {
         this.eventRepo = eventRepo;
     }
 
-    @GetMapping(value = "/index")
+    @GetMapping(value = "/")
 
     public String index(Model model){
 
@@ -30,10 +30,4 @@ public class IndexController {
 
     }
 
-
-
-    @GetMapping(value = "/")
-    public String PagesLogin(){
-        return "login";
-    }
 }

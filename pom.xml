@@ -59,18 +59,7 @@
             <version>1.2.17</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-parent</artifactId>
-            <version>3.0.8.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.stormpath.spring.security</groupId>
-            <artifactId>stormpath-spring-security-root</artifactId>
-            <version>0.3.0</version>
-            <scope>compile</scope>
-        </dependency>
+
 
 
     </dependencies>

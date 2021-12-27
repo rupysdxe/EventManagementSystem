@@ -34,28 +34,40 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block">
-                            <img class="rounded-circle border-primary" src="/images/logo.png" width="400px" height="400px"/>
-                        </div>
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Create Event</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Admin Register</h1>
+                                    <h6 class="text-danger"> <p th:text="${adminerror}"></p></h6>
                                 </div>
-                                <form class="user" action="/createEvent" method="post">
+                                <form class="user" action="/register" method="post">
                                     <div class="form-group">
-
-                                        <input  th:field="${event.topic}" type="text" class="form-control form-control-user"
+                                        <input type="text" class="form-control form-control-user"
+                                               id="firstName" aria-describedby="emailHelp"
+                                               name="firstName" placeholder="Enter firstName..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                               id="lastName" aria-describedby="emailHelp"
+                                               name="lastName" placeholder="Enter lastname..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                               id="position" aria-describedby="emailHelp"
+                                               name="position" placeholder="Enter Position here..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                               name="topic" placeholder="Enter Topic...." required>
+                                               name="username" placeholder="Enter Username..." required>
                                     </div>
                                     <div class="form-group">
-                                        <input  th:field="${event.notice}" type="text" class="form-control form-control-user"
-                                               id="exampleInputPassword" name="notice" placeholder="Notice" required>
-                                        <input th:field="${event.eid}" type="hidden">
-
+                                        <input type="password" class="form-control form-control-user"
+                                               id="exampleInputPassword" name="password" placeholder="Password" required>
                                     </div>
-                                    <input class="btn btn-primary btn-user btn-block" type="submit" value="Update Event">
+
+                                    <input class="btn btn-primary btn-user btn-block" type="submit" value="Register">
                                     <hr>
                                 </form>
                                 <hr>
